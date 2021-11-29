@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>hotel billing system</h1>
+	<label>customer name</label>
+	<input onblur="myFunction()" type="text" id="name"><br>
+	<label>services</label><br>
+	AC(rs100)<input type="checkbox" id="check1" onclick="testcheckbox()"><br>
+	light(rs50)<input type="checkbox" id="check2" onclick="testcheckbox()"><br>
+	<label>
+	<input type="text" id="gst" onblur="gstcal()" name=""><br>
+	<label>Net Amount</label><br>
+	<label>Email</label>
+	<input type="text" id="email" onblur="email()">
+	
+	
+	<script type="text/javascript">
+		function testcheckbox()
+	{
+		var ac=0;
+		var light=0;
+		if(document.getElementById('check1').checked)
+		{
+			ac=100;
+		}
+	if(document.getElementById('check2').checked)
+		{
+			light=50;
+		}
+		document.getElementById('netamt').value=ac+light;
+	}
+	function gstcal()
+	{
+		var netamt=parseInt(document.getElementById('netamt').value);
+		var gst=parseInt(document.getElementById('gst').value);
+		document.getElementById('netamt').value=netamt*gst/100+netamt;
+
+	}
+	function myFunction() {
+  	var text = document.getElementById("name").value;
+  	document.getElementById("name").value =text.toUpperCase();
+	}
+
+	function email(){
+		var text = document.getElementById('email').value;
+		document.getElementById('text').value=text.indexOf("@");
+		alert("valid email");
+		
+	}
+	</script>
+
+
+
+</body>
+</html>

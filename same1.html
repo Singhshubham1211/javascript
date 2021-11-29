@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fun()
+		{
+		 var str1=document.getElementById('txt1').value;
+		 var str2=document.getElementById('txt2').value;
+		 var length=str1.length;
+		 var length1=str2.length;
+		 
+		 var count=0;
+		 for(var i=0;i<Math.max(length,length1);i++)
+		 {
+		 	if(str1.charAt(i)==str2.charAt(i))
+		 	{
+		 			
+		 			count++;
+		 	}
+		 }
+		 if(count==Math.max(length,length1))
+		 {
+		 	alert("100% match");
+		 }
+		 else
+		 {
+		 alert("only "+count +" characters match");	
+		 }
+
+		}
+		
+	</script>
+	<label>customer name</label>
+	<input type="text" name="txt1" id="txt1">
+	<label>customer name</label>
+	<input type="text" name="" id="txt2">
+	<input type="button" onclick="fun()">
+
+
+</body>
+</html>
